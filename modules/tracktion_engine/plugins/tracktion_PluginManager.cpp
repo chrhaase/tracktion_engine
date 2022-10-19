@@ -598,6 +598,7 @@ void PluginManager::initialiseAirWindows()
     createBuiltInType<AirWindowsRecurve>();
     createBuiltInType<AirWindowsRemap>();
     createBuiltInType<AirWindowsResEQ>();
+    createBuiltInType<AirWindowsReverb>();
     createBuiltInType<AirWindowsRighteous4>();
     createBuiltInType<AirWindowsRightoMono>();
     createBuiltInType<AirWindowsSideDull>();
@@ -620,11 +621,13 @@ void PluginManager::initialiseAirWindows()
     createBuiltInType<AirWindowsSwell>();
     createBuiltInType<AirWindowsTPDFDither>();
     createBuiltInType<AirWindowsTapeDelay>();
+    createBuiltInType<AirWindowsTapeDelay2>();
     createBuiltInType<AirWindowsTapeDither>();
     createBuiltInType<AirWindowsTapeDust>();
     createBuiltInType<AirWindowsTapeFat>();
     createBuiltInType<AirWindowsThunder>();
     createBuiltInType<AirWindowsToTape5>();
+    createBuiltInType<AirWindowsToTape6>();
     createBuiltInType<AirWindowsToVinyl4>();
     createBuiltInType<AirWindowsToneSlant>();
     createBuiltInType<AirWindowsTransDesk>();
