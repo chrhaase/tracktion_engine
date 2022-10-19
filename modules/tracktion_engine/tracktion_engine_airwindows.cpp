@@ -13,7 +13,16 @@
 #include <numeric>
 #include <set>
 #include <string>
+
+#if JUCE_WINDOWS
+  #define _USE_MATH_DEFINES
+#endif
+
 #include <math.h>
+
+#if JUCE_WINDOWS
+  #undef _USE_MATH_DEFINES
+#endif
 
 #include "tracktion_engine.h"
 
