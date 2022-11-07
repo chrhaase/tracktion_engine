@@ -13,7 +13,16 @@
 #include <numeric>
 #include <set>
 #include <string>
+
+#if JUCE_WINDOWS
+  #define _USE_MATH_DEFINES
+#endif
+
 #include <math.h>
+
+#if JUCE_WINDOWS
+  #undef _USE_MATH_DEFINES
+#endif
 
 #include "tracktion_engine.h"
 
@@ -775,6 +784,11 @@ namespace reseq
  #include "3rd_party/airwindows/ResEQ/ResEQ.cpp"
  #include "3rd_party/airwindows/ResEQ/ResEQProc.cpp"
 }
+namespace reverb
+{
+#include "3rd_party/airwindows/Reverb/Reverb.cpp"
+#include "3rd_party/airwindows/Reverb/ReverbProc.cpp"
+}
 namespace righteous4
 {
  #include "3rd_party/airwindows/Righteous4/Righteous4.cpp"
@@ -885,6 +899,11 @@ namespace tapedelay
  #include "3rd_party/airwindows/TapeDelay/TapeDelay.cpp"
  #include "3rd_party/airwindows/TapeDelay/TapeDelayProc.cpp"
 }
+namespace tapedelay2
+{
+#include "3rd_party/airwindows/TapeDelay2/TapeDelay2.cpp"
+#include "3rd_party/airwindows/TapeDelay2/TapeDelay2Proc.cpp"
+}
 namespace tapedither
 {
  #include "3rd_party/airwindows/TapeDither/TapeDither.cpp"
@@ -909,6 +928,11 @@ namespace totape5
 {
  #include "3rd_party/airwindows/ToTape5/ToTape5.cpp"
  #include "3rd_party/airwindows/ToTape5/ToTape5Proc.cpp"
+}
+namespace totape6
+{
+#include "3rd_party/airwindows/ToTape6/ToTape6.cpp"
+#include "3rd_party/airwindows/ToTape6/ToTape6Proc.cpp"
 }
 namespace tovinyl4
 {

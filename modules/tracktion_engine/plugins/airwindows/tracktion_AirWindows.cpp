@@ -469,6 +469,7 @@ const char* AirWindowsRawTimbers::xmlTypeName = "airwindows_rawtimbers";
 const char* AirWindowsRecurve::xmlTypeName = "airwindows_recurve";
 const char* AirWindowsRemap::xmlTypeName = "airwindows_remap";
 const char* AirWindowsResEQ::xmlTypeName = "airwindows_reseq";
+const char* AirWindowsReverb::xmlTypeName = "airwindows_reverb";
 const char* AirWindowsRighteous4::xmlTypeName = "airwindows_righteous4";
 const char* AirWindowsRightoMono::xmlTypeName = "airwindows_rightomono";
 const char* AirWindowsSideDull::xmlTypeName = "airwindows_sidedull";
@@ -491,11 +492,13 @@ const char* AirWindowsSurgeTide::xmlTypeName = "airwindows_surgetide";
 const char* AirWindowsSwell::xmlTypeName = "airwindows_swell";
 const char* AirWindowsTPDFDither::xmlTypeName = "airwindows_tpdfdither";
 const char* AirWindowsTapeDelay::xmlTypeName = "airwindows_tapedelay";
+const char* AirWindowsTapeDelay2::xmlTypeName = "airwindows_tapedelay2";
 const char* AirWindowsTapeDither::xmlTypeName = "airwindows_tapedither";
 const char* AirWindowsTapeDust::xmlTypeName = "airwindows_tapedust";
 const char* AirWindowsTapeFat::xmlTypeName = "airwindows_tapefat";
 const char* AirWindowsThunder::xmlTypeName = "airwindows_thunder";
 const char* AirWindowsToTape5::xmlTypeName = "airwindows_totape5";
+const char* AirWindowsToTape6::xmlTypeName = "airwindows_totape6";
 const char* AirWindowsToVinyl4::xmlTypeName = "airwindows_tovinyl4";
 const char* AirWindowsToneSlant::xmlTypeName = "airwindows_toneslant";
 const char* AirWindowsTransDesk::xmlTypeName = "airwindows_transdesk";
@@ -656,6 +659,7 @@ AirWindowsRawTimbers::Type AirWindowsRawTimbers::pluginType = AirWindowsPlugin::
 AirWindowsRecurve::Type AirWindowsRecurve::pluginType = AirWindowsPlugin::dynamics;
 AirWindowsRemap::Type AirWindowsRemap::pluginType = AirWindowsPlugin::utility;
 AirWindowsResEQ::Type AirWindowsResEQ::pluginType = AirWindowsPlugin::eq;
+AirWindowsResEQ::Type AirWindowsReverb::pluginType = AirWindowsPlugin::reverb;
 AirWindowsRighteous4::Type AirWindowsRighteous4::pluginType = AirWindowsPlugin::dynamics;
 AirWindowsRightoMono::Type AirWindowsRightoMono::pluginType = AirWindowsPlugin::utility;
 AirWindowsSideDull::Type AirWindowsSideDull::pluginType = AirWindowsPlugin::filter;
@@ -678,11 +682,13 @@ AirWindowsSurgeTide::Type AirWindowsSurgeTide::pluginType = AirWindowsPlugin::dy
 AirWindowsSwell::Type AirWindowsSwell::pluginType = AirWindowsPlugin::dynamics;
 AirWindowsTPDFDither::Type AirWindowsTPDFDither::pluginType = AirWindowsPlugin::dither;
 AirWindowsTapeDelay::Type AirWindowsTapeDelay::pluginType = AirWindowsPlugin::emulation;
+AirWindowsTapeDelay2::Type AirWindowsTapeDelay2::pluginType = AirWindowsPlugin::emulation;
 AirWindowsTapeDither::Type AirWindowsTapeDither::pluginType = AirWindowsPlugin::dither;
 AirWindowsTapeDust::Type AirWindowsTapeDust::pluginType = AirWindowsPlugin::distortion;
 AirWindowsTapeFat::Type AirWindowsTapeFat::pluginType = AirWindowsPlugin::emulation;
 AirWindowsThunder::Type AirWindowsThunder::pluginType = AirWindowsPlugin::dynamics;
 AirWindowsToTape5::Type AirWindowsToTape5::pluginType = AirWindowsPlugin::emulation;
+AirWindowsToTape5::Type AirWindowsToTape6::pluginType = AirWindowsPlugin::emulation;
 AirWindowsToVinyl4::Type AirWindowsToVinyl4::pluginType = AirWindowsPlugin::emulation;
 AirWindowsToneSlant::Type AirWindowsToneSlant::pluginType = AirWindowsPlugin::eq;
 AirWindowsTransDesk::Type AirWindowsTransDesk::pluginType = AirWindowsPlugin::emulation;
@@ -987,6 +993,8 @@ AirWindowsRemap::AirWindowsRemap (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::remap::Remap> (&callback)) {}
 AirWindowsResEQ::AirWindowsResEQ (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::reseq::ResEQ> (&callback)) {}
+AirWindowsReverb::AirWindowsReverb (PluginCreationInfo info)
+    : AirWindowsPlugin (info, std::make_unique<airwindows::reverb::Reverb> (&callback)) {}
 AirWindowsRighteous4::AirWindowsRighteous4 (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::righteous4::Righteous4> (&callback)) {}
 AirWindowsRightoMono::AirWindowsRightoMono (PluginCreationInfo info)
@@ -1031,6 +1039,8 @@ AirWindowsTPDFDither::AirWindowsTPDFDither (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::tpdfdither::TPDFDither> (&callback)) {}
 AirWindowsTapeDelay::AirWindowsTapeDelay (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::tapedelay::TapeDelay> (&callback)) {}
+AirWindowsTapeDelay2::AirWindowsTapeDelay2 (PluginCreationInfo info)
+    : AirWindowsPlugin (info, std::make_unique<airwindows::tapedelay2::TapeDelay2> (&callback)) {}
 AirWindowsTapeDither::AirWindowsTapeDither (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::tapedither::TapeDither> (&callback)) {}
 AirWindowsTapeDust::AirWindowsTapeDust (PluginCreationInfo info)
@@ -1041,6 +1051,8 @@ AirWindowsThunder::AirWindowsThunder (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::thunder::Thunder> (&callback)) {}
 AirWindowsToTape5::AirWindowsToTape5 (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::totape5::ToTape5> (&callback)) {}
+AirWindowsToTape6::AirWindowsToTape6 (PluginCreationInfo info)
+    : AirWindowsPlugin (info, std::make_unique<airwindows::totape6::ToTape6> (&callback)) {}
 AirWindowsToVinyl4::AirWindowsToVinyl4 (PluginCreationInfo info)
     : AirWindowsPlugin (info, std::make_unique<airwindows::tovinyl4::ToVinyl4> (&callback)) {}
 AirWindowsToneSlant::AirWindowsToneSlant (PluginCreationInfo info)

@@ -262,6 +262,7 @@ AIRWINDOWSPLUGIN(AirWindowsRawTimbers, "Raw Timbers");
 AIRWINDOWSPLUGIN(AirWindowsRecurve, "Recurve");
 AIRWINDOWSPLUGIN(AirWindowsRemap, "Remap");
 AIRWINDOWSPLUGIN(AirWindowsResEQ, "ResEQ");
+AIRWINDOWSPLUGIN(AirWindowsReverb, "Reverb");
 AIRWINDOWSPLUGIN(AirWindowsRighteous4, "Righteous 4");
 AIRWINDOWSPLUGIN(AirWindowsRightoMono, "Righto Mono");
 AIRWINDOWSPLUGIN(AirWindowsSideDull, "Side Dull");
@@ -284,11 +285,13 @@ AIRWINDOWSPLUGIN(AirWindowsSurgeTide, "Surge Tide");
 AIRWINDOWSPLUGIN(AirWindowsSwell, "Swell");
 AIRWINDOWSPLUGIN(AirWindowsTPDFDither, "TPDF Dither");
 AIRWINDOWSPLUGIN(AirWindowsTapeDelay, "Tape Delay");
+AIRWINDOWSPLUGIN(AirWindowsTapeDelay2, "Tape Delay 2")
 AIRWINDOWSPLUGIN(AirWindowsTapeDither, "Tape Dither");
 AIRWINDOWSPLUGIN(AirWindowsTapeDust, "Tape Dust");
 AIRWINDOWSPLUGIN(AirWindowsTapeFat, "Tape Fat");
 AIRWINDOWSPLUGIN(AirWindowsThunder, "Thunder");
 AIRWINDOWSPLUGIN(AirWindowsToTape5, "To Tape 5");
+AIRWINDOWSPLUGIN(AirWindowsToTape6, "To Tape 6")
 AIRWINDOWSPLUGIN(AirWindowsToVinyl4, "To Vinyl 4");
 AIRWINDOWSPLUGIN(AirWindowsToneSlant, "Tone Slant");
 AIRWINDOWSPLUGIN(AirWindowsTransDesk, "Trans Desk");
